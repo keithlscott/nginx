@@ -7,9 +7,7 @@ RUN apt update && apt install -y openssh-server
 
 RUN adduser kscott
 RUN mkdir -p /home/kscott/.ssh
-COPY id_nginx.pub /home/kscott/.ssh/authorized_keys
+COPY ./id_nginx.pub /home/kscott/.ssh/authorized_keys
 RUN chown kscott:kscott /home/kscott/.ssh/*
 RUN chmod go-rx /home/kscott/.ssh/authorized_keys
-
-ENTRYPOINT service ssh restart
 
