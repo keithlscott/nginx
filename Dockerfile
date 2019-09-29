@@ -1,5 +1,6 @@
 # docker build https://github.com/keithlscott/nginx.git
 from nginx
 
-run apt update && apt install openssh-server
+RUN apt update 
+RUN apt install openssh-server
 
